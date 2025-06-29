@@ -44,6 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
     mongoUrl:dbUrl,
@@ -52,6 +53,10 @@ const store = MongoStore.create({
     },
     touchAfter:24*3600,
 });
+
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 
 store.on("error",()=>{
     console.log("ERROR in MONGO SESSION STORE",err);
