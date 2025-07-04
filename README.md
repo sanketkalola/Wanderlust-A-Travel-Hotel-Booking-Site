@@ -2,7 +2,7 @@
 
 Wanderlust is a web application crafted to fuel your travel passion and streamline the planning process for your next adventure.
 
-[Live Demo](https://wanderlust-a-travel-hotel-booking-site-ixe5.onrender.com)
+
 
 ## Features
 
